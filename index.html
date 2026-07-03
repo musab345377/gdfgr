@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cineby Proxy</title>
+</head>
+<body>
+    <button id="btn">Fetch Cineby</button>
+    <div id="output"></div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', async () => {
+            // REPLACE THIS URL with your live Render/Vercel URL later
+            const backendUrl = 'https://onrender.com';
+            
+            try {
+                const res = await fetch(backendUrl);
+                document.getElementById('output').innerText = await res.text();
+            } catch (err) {
+                document.getElementById('output').innerText = 'Failed to connect.';
+            }
+        });
+    </script>
+</body>
+</html>
